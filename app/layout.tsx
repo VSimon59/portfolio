@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               jobTitle: "Développeur Front-End",
               sameAs: [
                 "https://github.com/VSimon59",
-                "https://www.linkedin.com/in/tonpseudo",
+                "https://www.linkedin.com/in/simon-verriele/",
               ],
             }),
           }}
