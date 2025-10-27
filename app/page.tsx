@@ -1,5 +1,6 @@
-import ProjectCard from "@/components/ProjectCard";
-import { projects } from "@/data/projects";
+// app/page.tsx
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "../data/projects";
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
       <section className="mb-12">
         <h1 className="text-3xl md:text-5xl font-bold leading-tight">
           Sites vitrines <span className="text-blue-500">React</span>, orientés{" "}
-          <span className="text-blue-500">UX/UI</span><br className="hidden md:block" />
+          <span className="text-blue-500">UX/UI</span>
+          <br className="hidden md:block" />
           rapides, accessibles et soignés.
         </h1>
         <p className="mt-4 text-lg text-slate-400">
@@ -61,4 +63,3 @@ export default function Home() {
     </main>
   );
 }
-

@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Simon Verriele — Développeur Front-End (React)",
   description:
     "Sites vitrines React orientés UX/UI : rapides, accessibles et soignés.",
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio vsimon59",
     type: "website",
   },
-};
+} satisfies import("next").Metadata;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
