@@ -1,6 +1,8 @@
 # Portfolio – Simon Verriele
-
 [![CI](https://github.com/VSimon59/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/VSimon59/portfolio/actions/workflows/ci.yml)
+
+Mon portfolio développé avec Next.js, TypeScript et Tailwind CSS.
+
 
 # portfolio
 =======
