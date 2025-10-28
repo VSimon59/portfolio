@@ -1,3 +1,14 @@
+export const metadata = {
+  title: 'Étude de cas – Photographe freelance',
+  description: "Portfolio immersif, léger et mobile-first pour un photographe indépendant.",
+  openGraph: {
+    title: 'Étude de cas – Photographe freelance',
+    description: "Portfolio immersif, léger et mobile-first pour un photographe indépendant.",
+    url: 'https://portfolio-vsimon59.vercel.app/projets/photographe-freelance',
+    images: ['/og/photo.png'],
+  },
+}
+
 export default function Page() {
   function Top({ title, subtitle, children }) {
     return (

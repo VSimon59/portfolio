@@ -1,3 +1,14 @@
+export const metadata = {
+  title: 'Portfolio – Simon Verriele',
+  description: "Développeur web – sites vitrines élégants et performants (Next.js, Tailwind).",
+  openGraph: {
+    title: 'Portfolio – Simon Verriele',
+    description: "Développeur web – sites vitrines élégants et performants (Next.js, Tailwind).",
+    url: 'https://portfolio-vsimon59.vercel.app/',
+    images: ['/og/home.png'],
+  },
+}
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-white text-neutral-800">

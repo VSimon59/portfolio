@@ -1,3 +1,15 @@
+export const metadata = {
+  title: 'Étude de cas – Artisan plombier',
+  description: "Site clair, rassurant et orienté conversion pour un artisan local.",
+  openGraph: {
+    title: 'Étude de cas – Artisan plombier',
+    description: "Site clair, rassurant et orienté conversion pour un artisan local.",
+    url: 'https://portfolio-vsimon59.vercel.app/projets/artisan-plombier',
+    images: ['/og/plombier.png'],
+  },
+}
+
+
 export default function Page() {
   function Top({ title, subtitle, children }) {
     return (
