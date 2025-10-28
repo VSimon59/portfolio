@@ -3,13 +3,17 @@
 export default function StudioPage() {
   function Top({ title, subtitle }) {
     return (
-      <header className="mb-8">
-        <a href="/" className="text-sm underline">← Retour à l'accueil</a>
-        <h1 className="mt-2 text-2xl sm:text-3xl font-bold">{title}</h1>
-        {subtitle ? <p className="mt-1 text-neutral-600">{subtitle}</p> : null}
+      <header className="mt-8 rounded-xl border p-4 bg-white">
+            <p className="font-semibold mb-2">Accès direct aux études de cas :</p>
+            <ul className="list-disc pl-5 space-y-1">
+                <li><a className="underline" href="/projets/studio-creatif">/projets/studio-creatif</a></li>
+                <li><a className="underline" href="/projets/photographe-freelance">/projets/photographe-freelance</a></li>
+                <li><a className="underline" href="/projets/artisan-plombier">/projets/artisan-plombier</a></li>
+            </ul>
       </header>
     )
   }
+  
   function Section({ title, children }) {
     return (
       <section className="mb-8">
@@ -109,3 +113,5 @@ function Projects() {
     </section>
   )
 }
+
+
