@@ -1,25 +1,17 @@
-// app/layout.tsx — VERSION FINALE PROPRE
-// Ce fichier définit uniquement la structure HTML de base du site.
-// Il ne contient AUCUNE logique d'affichage de page (header, sections, etc.)
-// Ces éléments doivent rester dans app/page.jsx.
-
+// app/layout.tsx — SERVER COMPONENT (no "use client")
 import './globals.css'
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'Portfolio – Simon Verriele',
   description: 'Développeur Next.js/TypeScript',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
       <body>{children}</body>
     </html>
   )
 }
-
