@@ -1,23 +1,11 @@
-// app/layout.tsx — SERVER COMPONENT (no "use client")
+// app/layout.tsx — minimal, côté serveur (pas de "use client")
 import './globals.css'
-import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import Header from './components/Header'
-import Footer from './components/Footer'
-
-export const metadata: Metadata = {
-  title: 'Portfolio – Simon Verriele',
-  description: 'Développeur Next.js/TypeScript',
-}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr" data-theme="light">
-      <body>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+    <html lang="fr">
+      <body>{children}</body>
     </html>
   )
 }

@@ -1,18 +1,17 @@
-'use client'
-
-export default function PlombierPage() {
-  function Top({ title, subtitle }) {
+export default function Page() {
+  function Top({ title, subtitle, children }) {
     return (
       <header className="mb-8">
         <a href="/" className="text-sm underline">← Retour à l'accueil</a>
         <h1 className="mt-2 text-2xl sm:text-3xl font-bold">{title}</h1>
         {subtitle ? <p className="mt-1 text-neutral-600">{subtitle}</p> : null}
+        {children ? <div className="mt-3 flex flex-wrap gap-2">{children}</div> : null}
       </header>
     )
   }
   function Section({ title, children }) {
     return (
-      <section className="mb-8">
+      <section className="mb-10">
         <h2 className="mb-2 text-xl font-semibold">{title}</h2>
         <div className="prose prose-neutral max-w-none text-sm sm:text-base">{children}</div>
       </section>
@@ -20,39 +19,61 @@ export default function PlombierPage() {
   }
   function Badge({ children }) {
     return (
-      <span className="inline-flex items-center rounded-full border px-2.5 py-1 text-xs leading-none text-neutral-700 mr-2 mb-2">
+      <span className="inline-flex items-center rounded-full border px-2.5 py-1 text-xs leading-none text-neutral-700">
         {children}
       </span>
     )
   }
 
   return (
-    <main>
-      <Top title="Artisan plombier — leads locaux" subtitle="Site simple, téléphone visible, contact immédiat." />
+    <main className="min-h-screen bg-white text-neutral-800">
+      <Top title="Artisan plombier" subtitle="Site clair, rassurant, orienté conversion">
+        <Badge>Next.js</Badge>
+        <Badge>Tailwind CSS</Badge>
+        <Badge>Appels directs</Badge>
+        <Badge>SEO local</Badge>
+      </Top>
 
-      <Section title="Contexte">
-        <p>Le site devait générer des appels avec des CTA clairs et un référencement local efficace.</p>
+      <Section title="Aperçu du projet">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="aspect-video rounded-xl border overflow-hidden bg-neutral-50">
+            <img src="/images/plombier-home.jpg" alt="Accueil — Artisan plombier"
+                 className="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div className="aspect-video rounded-xl border overflow-hidden bg-neutral-50">
+            <img src="/images/plombier-services.jpg" alt="Services — Artisan plombier"
+                 className="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Contexte & Objectifs">
+        <p>
+          Générer des appels / demandes de devis. Rassurer par la clarté : horaires,
+          zone d’intervention, services, avis, et boutons d’action visibles.
+        </p>
       </Section>
 
       <Section title="Approche">
-        <ul className="list-disc pl-5">
-          <li>Boutons “Appeler” et “Demander un devis”</li>
-          <li>Zone d’intervention & horaires</li>
-          <li>Pages services dédiées</li>
-          <li>SEO local optimisé</li>
+        <ul className="list-disc list-inside space-y-1">
+          <li>Appels à l’action “Appeler / Devis” visibles en haut et en bas</li>
+          <li>Pages “Services” dédiées + zone d’intervention</li>
+          <li>Contenu local optimisé (titres, méta, données structurées)</li>
         </ul>
       </Section>
 
-      <Section title="Résultats">
-        <Badge>LCP ~1,2 s</Badge>
-        <Badge>Accessibilité 100</Badge>
-        <Badge>SEO 95</Badge>
+      <Section title="Résultat">
+        <p>
+          Un site simple, rapide et crédible, pensé pour convertir. L’utilisateur trouve vite
+          l’information essentielle et peut contacter l’artisan immédiatement.
+        </p>
       </Section>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <a href="#" className="rounded border px-4 py-2">Voir la démo</a>
-        <a href="#" className="rounded border px-4 py-2">Voir le code</a>
-        <a href="/" className="rounded bg-black px-4 py-2 text-white">Retour</a>
+        <a href="/" className="rounded border px-4 py-2">Retour</a>
+        <a href="mailto:simon.verriele@hotmail.fr" className="rounded bg-black px-4 py-2 text-white">
+          Me contacter
+        </a>
       </div>
     </main>
   )
