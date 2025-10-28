@@ -100,6 +100,7 @@ function Projects() {
               <div className="mt-4 flex gap-3">
                 <a className="btn btn-primary" href={p.href}>Étude de cas</a>
                 <a className="btn border" href="#contact">Me contacter</a>
+                <a href="/mentions-legales" className="underline">Mentions légales</a>
               </div>
             </article>
           ))}
