@@ -1,8 +1,14 @@
 # Portfolio – Simon Verriele
+
 [![CI](https://github.com/VSimon59/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/VSimon59/portfolio/actions/workflows/ci.yml)
 
-Mon portfolio développé avec Next.js, TypeScript et Tailwind CSS.
+Mon portfolio développé avec **Next.js**, **TypeScript** et **Tailwind CSS**.  
+Ce projet présente plusieurs sites vitrines pour mettre en avant mes compétences :
+- Studio créatif 🎨  
+- Photographe freelance 📸  
+- Artisan plombier 🔧  
 
+🚀 Déployé automatiquement avec [Vercel](https://vercel.com).
 
 # portfolio
 =======
