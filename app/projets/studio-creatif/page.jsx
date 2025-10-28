@@ -1,6 +1,4 @@
-'use client'
-
-export default function StudioPage() {
+export default function Page() {
   function Top({ title, subtitle }) {
     return (
       <header className="mb-8">
@@ -10,6 +8,7 @@ export default function StudioPage() {
       </header>
     )
   }
+
   function Section({ title, children }) {
     return (
       <section className="mb-8">
@@ -18,51 +17,27 @@ export default function StudioPage() {
       </section>
     )
   }
-  function Badge({ children }) {
-    return (
-      <span className="inline-flex items-center rounded-full border px-2.5 py-1 text-xs leading-none text-neutral-700 mr-2 mb-2">
-        {children}
-      </span>
-    )
-  }
 
   return (
     <main>
       <Top title="Studio créatif — site vitrine" subtitle="Design audacieux, performance instantanée." />
 
-      <Section title="Contexte">
-        <p>Un petit studio de design voulait une vitrine claire et moderne pour présenter ses services et son book, avec un chargement rapide.</p>
-      </Section>
-
-      <Section title="Approche">
-        <ul className="list-disc pl-5">
-          <li>Next.js (App Router) + Tailwind CSS</li>
-          <li>Animations CSS légères</li>
-          <li>Images optimisées (WebP &lt; 150 Ko)</li>
-          <li>SEO & balises Open Graph</li>
-        </ul>
-      </Section>
-
-      <Section title="Résultats">
-        <div>
-          <Badge>LCP ~1,3 s</Badge>
-          <Badge>Accessibilité 100</Badge>
-          <Badge>SEO 100</Badge>
-        </div>
-      </Section>
-
       <Section title="Galerie (captures)">
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="aspect-video rounded-xl border bg-neutral-50 flex items-center justify-center">Home</div>
-          <div className="aspect-video rounded-xl border bg-neutral-50 flex items-center justify-center">Portfolio</div>
+          <div className="aspect-video rounded-xl border bg-neutral-50 flex items-center justify-center overflow-hidden">
+            <video
+              src="/videos/home.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+              aria-label="Aperçu vidéo home"
+            />
+          </div>
         </div>
       </Section>
-
-      <div className="mt-8 flex flex-wrap gap-3">
-        <a href="#" className="rounded border px-4 py-2">Voir la démo</a>
-        <a href="#" className="rounded border px-4 py-2">Voir le code</a>
-        <a href="/" className="rounded bg-black px-4 py-2 text-white">Retour</a>
-      </div>
     </main>
   )
 }
