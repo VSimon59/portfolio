@@ -1,117 +1,104 @@
-'use client'
-
-export default function StudioPage() {
-  function Top({ title, subtitle }) {
-    return (
-      <header className="mt-8 rounded-xl border p-4 bg-white">
-            <p className="font-semibold mb-2">Accès direct aux études de cas :</p>
-            <ul className="list-disc pl-5 space-y-1">
-                <li><a className="underline" href="/projets/studio-creatif">/projets/studio-creatif</a></li>
-                <li><a className="underline" href="/projets/photographe-freelance">/projets/photographe-freelance</a></li>
-                <li><a className="underline" href="/projets/artisan-plombier">/projets/artisan-plombier</a></li>
-            </ul>
-      </header>
-    )
-  }
-  
-  function Section({ title, children }) {
-    return (
-      <section className="mb-8">
-        <h2 className="mb-2 text-xl font-semibold">{title}</h2>
-        <div className="prose prose-neutral max-w-none text-sm sm:text-base">{children}</div>
-      </section>
-    )
-  }
-  function Badge({ children }) {
-    return (
-      <span className="inline-flex items-center rounded-full border px-2.5 py-1 text-xs leading-none text-neutral-700 mr-2 mb-2">
-        {children}
-      </span>
-    )
-  }
-
+export default function Page() {
   return (
-    <main>
-      <Top title="Studio créatif — site vitrine" subtitle="Design audacieux, performance instantanée." />
+    <main className="min-h-screen bg-white text-neutral-800">
+      {/* SECTION HERO */}
+      <section className="flex flex-col items-center justify-center text-center py-24 px-6">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+          Portfolio — Simon Verriele
+        </h1>
+        <p className="text-lg text-neutral-600 max-w-2xl">
+          Développeur web créatif, spécialisé en sites vitrines élégants et performants.
+        </p>
 
-      <Section title="Contexte">
-        <p>Un petit studio de design voulait une vitrine claire et moderne pour présenter ses services et son book, avec un chargement rapide.</p>
-      </Section>
-
-      <Section title="Approche">
-        <ul className="list-disc pl-5">
-          <li>Next.js (App Router) + Tailwind CSS</li>
-          <li>Animations CSS légères</li>
-          <li>Images optimisées (WebP &lt; 150 Ko)</li>
-          <li>SEO & balises Open Graph</li>
-        </ul>
-      </Section>
-
-      <Section title="Résultats">
-        <div>
-          <Badge>LCP ~1,3 s</Badge>
-          <Badge>Accessibilité 100</Badge>
-          <Badge>SEO 100</Badge>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          <a
+            href="#projets"
+            className="rounded bg-black text-white px-6 py-3 hover:bg-neutral-800 transition"
+          >
+            Voir mes projets
+          </a>
+          <a
+            href="mailto:simon.verriele@hotmail.fr"
+            className="rounded border border-neutral-300 px-6 py-3 hover:bg-neutral-50 transition"
+          >
+            Me contacter
+          </a>
         </div>
-      </Section>
+      </section>
 
-      <Section title="Galerie (captures)">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="aspect-video rounded-xl border bg-neutral-50 flex items-center justify-center">Home</div>
-          <div className="aspect-video rounded-xl border bg-neutral-50 flex items-center justify-center">Portfolio</div>
+      {/* SECTION PROJETS */}
+      <section id="projets" className="py-20 px-6 bg-neutral-50">
+        <h2 className="text-3xl font-semibold text-center mb-12">
+          Mes projets
+        </h2>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          <a
+            href="/projets/studio-creatif"
+            className="group block border rounded-xl overflow-hidden hover:shadow-md transition bg-white"
+          >
+            <div className="aspect-video bg-neutral-100 flex items-center justify-center text-neutral-400">
+              <span>Studio créatif</span>
+            </div>
+            <div className="p-4">
+              <h3 className="font-semibold text-lg group-hover:text-blue-600 transition">
+                Studio créatif
+              </h3>
+              <p className="text-sm text-neutral-600">
+                Une vitrine design et performante pour un studio de création.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="/projets/photographe-freelance"
+            className="group block border rounded-xl overflow-hidden hover:shadow-md transition bg-white"
+          >
+            <div className="aspect-video bg-neutral-100 flex items-center justify-center text-neutral-400">
+              <span>Photographe freelance</span>
+            </div>
+            <div className="p-4">
+              <h3 className="font-semibold text-lg group-hover:text-blue-600 transition">
+                Photographe freelance
+              </h3>
+              <p className="text-sm text-neutral-600">
+                Site épuré et immersif pour un photographe indépendant.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="/projets/artisan-plombier"
+            className="group block border rounded-xl overflow-hidden hover:shadow-md transition bg-white"
+          >
+            <div className="aspect-video bg-neutral-100 flex items-center justify-center text-neutral-400">
+              <span>Artisan plombier</span>
+            </div>
+            <div className="p-4">
+              <h3 className="font-semibold text-lg group-hover:text-blue-600 transition">
+                Artisan plombier
+              </h3>
+              <p className="text-sm text-neutral-600">
+                Présentation claire et rassurante pour un artisan local.
+              </p>
+            </div>
+          </a>
         </div>
-      </Section>
+      </section>
 
-      <div className="mt-8 flex flex-wrap gap-3">
-        <a href="#" className="rounded border px-4 py-2">Voir la démo</a>
-        <a href="#" className="rounded border px-4 py-2">Voir le code</a>
-        <a href="/" className="rounded bg-black px-4 py-2 text-white">Retour</a>
-      </div>
+      {/* SECTION CONTACT */}
+      <section className="py-20 px-6 text-center">
+        <h2 className="text-3xl font-semibold mb-6">Contact</h2>
+        <p className="text-neutral-600 mb-4">
+          Une idée, un projet ? Parlons-en ensemble.
+        </p>
+        <a
+          href="mailto:simon.verriele@hotmail.fr"
+          className="inline-block rounded bg-black text-white px-8 py-3 hover:bg-neutral-800 transition"
+        >
+          Me contacter
+        </a>
+      </section>
     </main>
   )
 }
-function Projects() {
-  const items = [
-    {
-      titre: 'Studio créatif — site vitrine',
-      desc: 'Un site vitrine moderne et animé pour un petit studio de design.',
-      href: '/projets/studio-creatif',
-    },
-    {
-      titre: 'Photographe freelance — portfolio',
-      desc: 'Galerie rapide, optimisée pour mobile et référencement local.',
-      href: '/projets/photographe-freelance',
-    },
-    {
-      titre: 'Artisan plombier — leads locaux',
-      desc: 'Site simple et efficace, contact immédiat et clair.',
-      href: '/projets/artisan-plombier',
-    },
-  ]
-
-  return (
-    <section id="projets" className="scroll-mt-20 py-16 sm:py-24">
-      <Container>
-        <SectionTitle
-          title="3 exemples concrets"
-          subtitle="À chaque projet : objectif, approche, résultats (preuves Lighthouse)."
-        />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((p) => (
-            <article key={p.titre} className="rounded-2xl border bg-white p-5 shadow-sm">
-              <h3 className="text-lg font-semibold">{p.titre}</h3>
-              <p className="mt-1 text-sm text-neutral-600">{p.desc}</p>
-              <div className="mt-4 flex gap-3">
-                <a className="btn btn-primary" href={p.href}>Étude de cas</a>
-                <a className="btn border" href="#contact">Me contacter</a>
-                <a href="/mentions-legales" className="underline">Mentions légales</a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </Container>
-    </section>
-  )
-}
-
-
