@@ -1,3 +1,16 @@
+// en haut de app/projets/studio-creatif/page.jsx
+export const metadata = {
+  title: 'Étude de cas – Studio créatif',
+  description: "Vitrine design et performante pour un studio de création numérique.",
+  openGraph: {
+    title: 'Étude de cas – Studio créatif',
+    description: "Vitrine design et performante pour un studio de création numérique.",
+    images: ['/og/studio.png'],
+  },
+}
+
+
+
 export default function Page() {
   // Petits composants locaux (aucun import requis)
   function Top({ title, subtitle, children }) {
