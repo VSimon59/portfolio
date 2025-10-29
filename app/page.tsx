@@ -48,9 +48,26 @@ export default function Page() {
             href="/projets/studio-creatif"
             className="group block border rounded-xl overflow-hidden hover:shadow-md transition bg-white"
           >
-            <div className="aspect-video bg-neutral-100 flex items-center justify-center text-neutral-400">
-              <span>Studio créatif</span>
+           <div className="aspect-video overflow-hidden rounded-xl border bg-neutral-100 relative group">
+  {/* Image statique */}
+            <img
+              src="/images/studio-home.jpg"
+              alt="Aperçu Studio créatif"
+              className="w-full h-full object-cover transform transition-transform duration-[4000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:translate-x-2 group-hover:-translate-y-1"
+            />
+
+            {/* Overlay texte */}
+           {/* Image Studio Créatif sur la page d'accueil */}
+            <div className="aspect-video overflow-hidden rounded-xl border bg-neutral-100 relative group">
+              <img
+                src="/images/studio-home.jpg"
+                alt="Aperçu du projet Studio créatif"
+                className="w-full h-full object-cover transition-transform duration-[6000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
             </div>
+
+          </div>
+
             <div className="p-4">
               <h3 className="font-semibold text-lg group-hover:text-blue-600 transition">
                 Studio créatif
@@ -65,9 +82,14 @@ export default function Page() {
             href="/projets/photographe-freelance"
             className="group block border rounded-xl overflow-hidden hover:shadow-md transition bg-white"
           >
-            <div className="aspect-video bg-neutral-100 flex items-center justify-center text-neutral-400">
-              <span>Photographe freelance</span>
-            </div>
+            <div className="aspect-video overflow-hidden rounded-xl">
+                <img
+                  src="/images/photographe-freelance.jpg"
+                  alt="Aperçu du projet Photographe freelance"
+                  className="w-full h-full object-cover transform transition-transform duration-[4000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:translate-x-2 group-hover:-translate-y-1"
+                />
+              </div>
+
             <div className="p-4">
               <h3 className="font-semibold text-lg group-hover:text-blue-600 transition">
                 Photographe freelance
@@ -78,13 +100,18 @@ export default function Page() {
             </div>
           </a>
 
-          <a
+        <a
             href="/projets/artisan-plombier"
             className="group block border rounded-xl overflow-hidden hover:shadow-md transition bg-white"
           >
-            <div className="aspect-video bg-neutral-100 flex items-center justify-center text-neutral-400">
-              <span>Artisan plombier</span>
-            </div>
+            <div className="aspect-video overflow-hidden rounded-xl">
+                <img
+                  src="/images/artisan-plombier.jpg"
+                  alt="Aperçu du projet Artisan plombier"
+                  className="w-full h-full object-cover transform transition-transform duration-[4000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:translate-x-2 group-hover:-translate-y-1"
+                />
+              </div>
+
             <div className="p-4">
               <h3 className="font-semibold text-lg group-hover:text-blue-600 transition">
                 Artisan plombier
@@ -94,7 +121,7 @@ export default function Page() {
               </p>
             </div>
           </a>
-        </div>
+      </div>
       </section>
 
       {/* SECTION CONTACT */}
