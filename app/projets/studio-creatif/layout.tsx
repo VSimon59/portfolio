@@ -1,30 +1,24 @@
-// app/studio-creatif/layout.tsx
+// app/projets/studio-creatif/layout.tsx
 import type { Metadata } from "next";
+import "../../globals.css"; // on remonte d’un dossier
 
 export const metadata: Metadata = {
-  title: "Studio créatif — Site vitrine (V1)",
+  title: "Studio Créatif | Verriele Simon",
   description:
-    "Identités visuelles, sites web, contenu — simple et efficace.",
-  alternates: { canonical: "/studio-creatif" },
+    "Étude de cas complète du projet Studio Créatif : Next.js, Tailwind CSS, SEO et éco-conception.",
+  alternates: { canonical: "/projets/studio-creatif" },
 };
 
-export default function StudioLayout({ children }: { children: React.ReactNode }) {
+export default function StudioLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <section className="min-h-screen bg-white text-neutral-900">
-      <header className="px-6 md:px-12 lg:px-24 py-6 border-b">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <a href="/" className="font-semibold">← Retour</a>
-          <strong>Studio créatif</strong>
-        </div>
-      </header>
-
-      {children}
-
-      <footer className="px-6 md:px-12 lg:px-24 py-10 border-t mt-16">
-        <div className="max-w-6xl mx-auto text-sm text-neutral-500">
-          © {new Date().getFullYear()} Studio créatif
-        </div>
-      </footer>
+      <div className="max-w-5xl mx-auto px-6 py-12">
+        {children}
+      </div>
     </section>
   );
 }

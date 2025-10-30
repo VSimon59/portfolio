@@ -1,33 +1,28 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
 
-// --- POLICE GLOBALE --- //
-const inter = Inter({ subsets: ["latin"] });
-
-// --- INFORMATIONS DU SITE --- //
 const site = {
-  name: "Studio créatif",
+  name: "Verriele Simon – Portfolio",
   url: "https://vsimon59.vercel.app",
   description:
-    "Studio de design & dev : identités visuelles, sites web, contenu et campagnes — rapide, modulaire et éco-conçu.",
+    "Portfolio de Victor Simon – développeur front-end et designer. Projets : Studio Créatif, Photographe Freelance, Artisan Plombier.",
   locale: "fr_FR",
   twitter: "@vsimon",
 };
 
-// --- MÉTADONNÉES --- //
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} – design & dev`,
-    template: `%s – ${site.name}`,
+    default: site.name,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   alternates: { canonical: site.url },
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: `${site.name} – design & dev`,
+    title: site.name,
     description: site.description,
     url: site.url,
     images: [
@@ -43,16 +38,18 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: site.twitter,
-    title: `${site.name} – design & dev`,
+    title: site.name,
     description: site.description,
     images: ["/opengraph-image.png"],
   },
 };
 
-// --- LAYOUT GLOBAL --- //
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Données structurées Schema.org (Organization)
-  const orgSchema = {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: site.name,
@@ -66,15 +63,43 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="fr">
-      {/* ✅ Appliquer la classe de la police ici, côté serveur */}
-      <body className={inter.className}>
+      <body className="antialiased bg-white text-neutral-900">
+        {/* --- NAVIGATION (simple, au besoin) --- */}
+        <header className="py-4 border-b">
+          <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+            <a href="/" className="font-bold text-lg hover:text-blue-600">
+              {site.name}
+            </a>
+            <nav className="space-x-6 text-sm text-neutral-700">
+              <a href="#projets" className="hover:text-blue-600">
+                Projets
+              </a>
+              <a
+                href="https://github.com/VSimon59/portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600"
+              >
+                Code source
+              </a>
+            </nav>
+          </div>
+        </header>
+
+        {/* --- CONTENU PRINCIPAL --- */}
         {children}
 
-        {/* Données structurées JSON-LD (évite les mismatches) */}
+        {/* --- PIED DE PAGE --- */}
+        <footer className="py-10 border-t mt-20 text-center text-sm text-neutral-500">
+          <p>
+            © {new Date().getFullYear()} Victor Simon – Portfolio. Tous droits réservés.
+          </p>
+        </footer>
+
+        {/* --- JSON-LD pour SEO --- */}
         <script
           type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
         />
       </body>
     </html>

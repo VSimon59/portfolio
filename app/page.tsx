@@ -1,100 +1,94 @@
-// app/studio-creatif/page.tsx
-
 import Image from "next/image";
 import Link from "next/link";
-import BeforeAfter from "./components/BeforeAfter";
 
-export default function Page() {
+export default function Home() {
   return (
-    <main className="px-6 md:px-12 lg:px-24">
-      <section className="max-w-6xl mx-auto py-14 md:py-20">
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-          Site vitrine — <span className="text-blue-600">comparatif V1 / V2</span>
-        </h1>
-        <p className="mt-4 text-lg text-neutral-700 max-w-3xl">
-          V1 : version rudimentaire et lisible. V2 : version optimisée (Next/Image,
-          SEO, JSON-LD, médias et perfs).
+    <main className="min-h-screen bg-white">
+      {/* HERO */}
+      <section className="text-center py-24">
+        <h1 className="text-4xl md:text-6xl font-bold">Portfolio de Verriele Simon</h1>
+        <p className="mt-4 text-neutral-600 text-lg">
+          Découvrez mes projets : design, développement et optimisation web.
         </p>
       </section>
 
-      {/* Cartes */}
-      <section className="max-w-6xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-semibold">Aperçu</h2>
+      {/* SECTION PROJETS */}
+      <section id="projets" className="py-20 px-6 md:px-12 lg:px-24 bg-neutral-50">
+        <h2 className="text-2xl font-semibold mb-10 text-center">Projets récents</h2>
 
-        <div className="grid md:grid-cols-2 gap-8 mt-8">
-          {/* Carte V1 */}
+        <div className="grid gap-8 md:grid-cols-3">
+          {/* --- STUDIO CRÉATIF --- */}
           <Link
-            href="/studio-creatif/v1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block border rounded-2xl overflow-hidden hover:shadow-md transition"
-            aria-label="Ouvrir la version rudimentaire (nouvel onglet)"
+            href="/projets/studio-creatif"
+            className="group block border rounded-xl overflow-hidden hover:shadow-md transition"
           >
-            <div className="aspect-video bg-neutral-100 relative">
+            <div className="aspect-video overflow-hidden">
               <Image
-                src="/images/studio-site/v1-preview.png"
-                alt="Aperçu V1 — site vitrine rudimentaire"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-                priority
-                fetchPriority="high"
+                src="/images/studio-home.jpg"
+                alt="Aperçu du projet Studio Créatif"
+                width={800}
+                height={450}
+                className="w-full h-full object-cover transform transition-transform duration-[4000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:translate-x-2 group-hover:-translate-y-1"
               />
             </div>
-            <div className="p-5">
+            <div className="p-4">
               <h3 className="font-semibold text-lg group-hover:text-blue-600 transition">
-                Version V1 (rudimentaire)
+                Studio créatif
               </h3>
-              <p className="text-neutral-700 mt-1">
-                Structure simple, HTML sémantique, Tailwind minimal.
+              <p className="text-sm text-neutral-600">
+                Site vitrine mettant en avant design, performance et SEO.
               </p>
             </div>
           </Link>
 
-          {/* Carte V2 */}
+          {/* --- PHOTOGRAPHE FREELANCE --- */}
           <Link
-            href="/studio-creatif/v2"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block border rounded-2xl overflow-hidden hover:shadow-md transition"
-            aria-label="Ouvrir la version optimisée (nouvel onglet)"
+            href="/projets/photographe-freelance"
+            className="group block border rounded-xl overflow-hidden hover:shadow-md transition"
           >
-            <div className="aspect-video bg-neutral-100 relative">
+            <div className="aspect-video overflow-hidden">
               <Image
-                src="/images/studio-site/v2-preview.png"
-                alt="Aperçu V2 — site vitrine optimisé"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+                src="/images/photographe-freelance.jpg"
+                alt="Aperçu du projet Photographe freelance"
+                width={800}
+                height={450}
+                className="w-full h-full object-cover transform transition-transform duration-[4000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:translate-x-2 group-hover:-translate-y-1"
               />
             </div>
-            <div className="p-5">
+            <div className="p-4">
               <h3 className="font-semibold text-lg group-hover:text-blue-600 transition">
-                Version V2 (optimisée)
+                Photographe freelance
               </h3>
-              <p className="text-neutral-700 mt-1">
-                Next/Image, SEO (Open Graph + JSON-LD), médias optimisés.
+              <p className="text-sm text-neutral-600">
+                Vitrine épurée mettant en valeur portfolio et contact.
+              </p>
+            </div>
+          </Link>
+
+          {/* --- ARTISAN PLOMBIER --- */}
+          <Link
+            href="/projets/artisan-plombier"
+            className="group block border rounded-xl overflow-hidden hover:shadow-md transition"
+          >
+            <div className="aspect-video overflow-hidden">
+              <Image
+                src="/images/artisan-plombier.jpg"
+                alt="Aperçu du projet Artisan plombier"
+                width={800}
+                height={450}
+                className="w-full h-full object-cover transform transition-transform duration-[4000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:translate-x-2 group-hover:-translate-y-1"
+              />
+            </div>
+            <div className="p-4">
+              <h3 className="font-semibold text-lg group-hover:text-blue-600 transition">
+                Artisan plombier
+              </h3>
+              <p className="text-sm text-neutral-600">
+                Présentation claire et rassurante pour un artisan local.
               </p>
             </div>
           </Link>
         </div>
-      </section>
-
-      {/* Comparateur avant / après */}
-      <section className="max-w-6xl mx-auto py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Avant / Après</h2>
-        <p className="text-neutral-700 mb-6">
-          Compare la version rudimentaire et la version optimisée directement ci-dessous.
-        </p>
-
-        <BeforeAfter
-          beforeSrc="/images/studio-site/hero-v1.png"
-          afterSrc="/images/studio-site/hero-v2.png"
-          altBefore="Hero V1 rudimentaire"
-          altAfter="Hero V2 optimisée"
-          initial={0.5}
-          className="aspect-video"
-        />
       </section>
     </main>
   );
