@@ -1,4 +1,7 @@
+"use client";
+
 import type { Metadata } from "next";
+import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "Contact – Studio Créatif",
@@ -11,18 +14,42 @@ export const metadata: Metadata = {
       "Discutons de votre projet web : design, performance et identité numérique.",
     url: "https://vsimon59.vercel.app/projets/studio-creatif/contact",
     siteName: "Studio Créatif",
-    images: [
-      {
-        url: "/opengraph-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Studio Créatif – Contact",
-      },
-    ],
+    images: [{ url: "/opengraph-image.jpg", width: 1200, height: 630 }],
   },
 };
 
 export default function ContactPage() {
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSubmitting(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    try {
+      // Remplace XXXXXXXX par ton ID Formspree
+      const res = await fetch("https://formspree.io/f/xjkppzgj", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: fd,
+      });
+
+      if (res.ok) {
+        window.location.href = "/projets/studio-creatif/thank-you";
+      } else {
+        setError("Une erreur est survenue. Réessayez plus tard.");
+      }
+    } catch (err) {
+      setError("Impossible d’envoyer le message. Vérifiez votre connexion.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-neutral-50">
       <div className="max-w-xl w-full bg-white shadow-sm border rounded-2xl p-8">
@@ -32,19 +59,7 @@ export default function ContactPage() {
           et je vous répondrai rapidement.
         </p>
 
-        {/* FORMULAIRE FORMSPREE */}
-        <form
-          action="https://formspree.io/f/xjkppzgj" // ← remplace par ton ID Formspree
-          method="POST"
-          className="space-y-6"
-        >
-          {/* CHAMP CACHÉ DE REDIRECTION */}
-          <input
-            type="hidden"
-            name="_redirect"
-            value="https://vsimon59.vercel.app/projets/studio-creatif/thank-you"
-          />
-
+        <form onSubmit={onSubmit} className="space-y-6">
           <div>
             <label className="block text-sm font-medium mb-1" htmlFor="name">
               Nom
@@ -84,33 +99,33 @@ export default function ContactPage() {
               required
               className="w-full rounded-md border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Décrivez votre projet ou votre question..."
-            ></textarea>
+            />
           </div>
+
+          {error && (
+            <p className="text-sm text-red-600" role="alert">
+              {error}
+            </p>
+          )}
 
           <button
             type="submit"
-            className="w-full bg-black text-white font-medium py-3 rounded-md hover:bg-neutral-800 transition"
+            disabled={submitting}
+            className="w-full bg-black text-white font-medium py-3 rounded-md hover:bg-neutral-800 transition disabled:opacity-60"
           >
-            Envoyer le message
+            {submitting ? "Envoi en cours…" : "Envoyer le message"}
           </button>
         </form>
 
-        {/* AUTRES MOYENS DE CONTACT */}
         <div className="mt-8 text-center text-sm text-neutral-600">
           <p>ou contactez-moi directement :</p>
           <p className="mt-1">
-            <a
-              href="mailto:contact@exemple.com"
-              className="text-blue-600 hover:underline"
-            >
+            <a href="mailto:contact@exemple.com" className="text-blue-600 hover:underline">
               contact@exemple.com
             </a>
           </p>
           <p className="mt-1">
-            <a
-              href="tel:+33612345678"
-              className="text-blue-600 hover:underline"
-            >
+            <a href="tel:+33612345678" className="text-blue-600 hover:underline">
               +33 6 12 34 56 78
             </a>
           </p>
