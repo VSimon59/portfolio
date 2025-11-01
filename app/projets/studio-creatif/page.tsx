@@ -1,166 +1,194 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 // --- MÉTADONNÉES SEO --- //
 export const metadata: Metadata = {
-  title: "Studio Créatif – étude de cas",
+  title: "Studio Créatif – design & développement",
   description:
-    "Vitrine design pour une agence de création numérique : Next.js, Tailwind CSS, images JPG optimisées, SEO (Open Graph + JSON-LD).",
+    "Un site vitrine Next.js & Tailwind performant et éco-conçu. Optimisation des médias JPG, lazy loading, SEO Open Graph et JSON-LD.",
   alternates: { canonical: "/projets/studio-creatif" },
   openGraph: {
-    type: "article",
-    title: "Studio Créatif – étude de cas",
+    type: "website",
+    title: "Studio Créatif – design & développement",
     description:
-      "Vitrine design pour une agence de création numérique : Next.js, Tailwind CSS, images JPG optimisées, SEO (Open Graph + JSON-LD).",
+      "Un site vitrine Next.js & Tailwind performant et éco-conçu. Optimisation des médias JPG, lazy loading, SEO Open Graph et JSON-LD.",
     url: "https://vsimon59.vercel.app/projets/studio-creatif",
-    siteName: "Portfolio Verriele Simon",
+    siteName: "Studio Créatif",
     images: [
       {
-        url: "/images/studio-site/hero-v2.jpg",
-        width: 1400,
-        height: 900,
-        alt: "Aperçu du projet Studio Créatif",
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Aperçu du site Studio Créatif",
       },
     ],
     locale: "fr_FR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Créatif – étude de cas",
+    title: "Studio Créatif – design & développement",
     description:
-      "Vitrine design pour une agence de création numérique : Next.js, Tailwind CSS, images JPG optimisées, SEO (Open Graph + JSON-LD).",
-    images: ["/images/studio-site/hero-v2.jpg"],
+      "Site vitrine moderne réalisé avec Next.js, Tailwind, SEO et optimisation des médias.",
+    images: ["/opengraph-image.jpg"],
   },
 };
 
 // --- PAGE PRINCIPALE --- //
-export default function Page() {
+export default function StudioCreatifPage() {
   return (
-    <article className="prose md:prose-lg max-w-3xl mx-auto py-16 px-6">
-      {/* TITRE + INTRO */}
-      <header className="mb-10">
-        <h1 className="text-4xl font-bold">Studio Créatif</h1>
-        <p className="text-gray-600 mt-3">
-          Site vitrine conçu pour une agence numérique. Développé avec{" "}
-          <strong>Next.js (App Router)</strong> et{" "}
-          <strong>Tailwind CSS</strong>, ce projet met en avant la performance,
-          un design systémique et un SEO sémantique via Open Graph et JSON-LD.
-        </p>
-      </header>
-
-      {/* IMAGE PRINCIPALE */}
-      <Image
-        src="/images/studio-site/hero-v2.jpg"
-        alt="Aperçu – page d'accueil du projet Studio Créatif"
-        className="rounded-2xl mb-12"
-        width={1400}
-        height={900}
-        priority
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-      />
-
-      {/* OBJECTIFS */}
-      <section>
-        <h2>Objectifs</h2>
-        <ul>
-          <li>Vitesse perçue et Core Web Vitals excellents.</li>
-          <li>SEO propre (Open Graph + JSON-LD).</li>
-          <li>Design modulaire, éco-conçu et réutilisable.</li>
-        </ul>
-      </section>
-
-      {/* APPROCHE */}
-      <section>
-        <h2>Approche technique</h2>
-        <ul>
-          <li>
-            <strong>Next.js App Router</strong> pour un rendu rapide et modulaire.
-          </li>
-          <li>
-            <strong>Tailwind CSS</strong> pour un design systémique et fluide.
-          </li>
-          <li>
-            <strong>Optimisation des médias :</strong> formats JPG, lazy loading,
-            tailles adaptées.
-          </li>
-          <li>
-            <strong>Méta-données enrichies :</strong> Open Graph, Twitter, JSON-LD.
-          </li>
-        </ul>
-      </section>
-
-      {/* RÉSULTATS */}
-      <section>
-        <h2>Résultats</h2>
-        <p>
-          Le site obtient un excellent score Lighthouse :
-          <br />
-          <strong>Performance :</strong> 95+ ·{" "}
-          <strong>Accessibilité :</strong> 100 ·{" "}
-          <strong>SEO :</strong> 100
-        </p>
-      </section>
-
-      {/* GALERIE D’IMAGES */}
-      <section>
-        <h2>Galerie</h2>
-        <div className="grid md:grid-cols-2 gap-6 not-prose">
-          {/* Version 1 – Rudimentaire */}
-                  <a
-                      href="/projets/studio-creatif/v1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block group"
-                      title="Ouvrir la version rudimentaire (V1)"
-                    >
-                      <Image
-                        src="/images/studio-site/v1-preview.jpg"
-                        alt="Aperçu – ancienne version du site (V1 rudimentaire)"
-                        className="rounded-xl opacity-0 animate-[fadeIn_0.8s_ease-in-out_forwards] group-hover:opacity-90 transition"
-                        width={1200}
-                        height={800}
-                        loading="lazy"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                      />
-                      <p className="text-center text-sm text-neutral-500 mt-2">Version rudimentaire (V1)</p>
-                    </a>
-
-                    {/* Version 2 – Optimisée */}
-                    <a
-                      href="/projets/studio-creatif/v2"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block group"
-                      title="Ouvrir la version optimisée (V2)"
-                    >
-                      <Image
-                        src="/images/studio-site/v2-preview.jpg"
-                        alt="Aperçu – version optimisée du site (V2)"
-                        className="rounded-xl opacity-0 animate-[fadeIn_0.8s_ease-in-out_forwards] group-hover:opacity-90 transition"
-                        width={1200}
-                        height={800}
-                        loading="lazy"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                      />
-                      <p className="text-center text-sm text-neutral-500 mt-2">Version optimisée (V2)</p>
-                    </a>
+    <article className="max-w-6xl mx-auto py-12 md:py-16 px-4">
+      {/* HERO */}
+      <section className="relative aspect-[16/9] w-full mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-lg">
+        <Image
+          src="/images/studio-site/hero.jpg"
+          alt="Aperçu — Studio Créatif moderne"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 flex flex-col justify-end items-start p-6 md:p-10 text-white">
+          <h1 className="text-4xl md:text-5xl font-bold">Studio Créatif</h1>
+          <p className="mt-3 text-base md:text-lg max-w-2xl text-white/90">
+            Design & développement web — performance réelle, esthétique soignée et SEO sémantique.
+          </p>
+          {/* Boutons d’accès rapide aux pages */}
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/projets/studio-creatif/services" className="bg-white text-black px-5 py-2.5 rounded-md hover:bg-neutral-200 transition">
+              Services
+            </Link>
+            <Link href="/projets/studio-creatif/projets" className="bg-black/80 text-white px-5 py-2.5 rounded-md hover:bg-black transition border border-white/20">
+              Projets
+            </Link>
+            <Link href="/projets/studio-creatif/a-propos" className="bg-white/10 text-white px-5 py-2.5 rounded-md hover:bg-white/20 transition border border-white/20">
+              À propos
+            </Link>
+            <Link href="/projets/studio-creatif/contact" className="bg-blue-600 text-white px-5 py-2.5 rounded-md hover:bg-blue-700 transition">
+              Contact
+            </Link>
           </div>
+        </div>
       </section>
 
-      {/* JSON-LD STRUCTURÉ */}
+      {/* OBJECTIFS (agencement cartes) */}
+      <section className="mb-12 md:mb-16">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Objectifs</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="rounded-xl border p-5 bg-white">
+            <div className="text-2xl mb-2">⚡</div>
+            <h3 className="font-semibold">Vitesse & Core Web Vitals</h3>
+            <p className="text-sm text-neutral-600 mt-1">
+              Rendu rapide (App Router), lazy loading, tailles d’images adaptées pour une sensation de fluidité.
+            </p>
+          </div>
+          <div className="rounded-xl border p-5 bg-white">
+            <div className="text-2xl mb-2">🔍</div>
+            <h3 className="font-semibold">SEO propre</h3>
+            <p className="text-sm text-neutral-600 mt-1">
+              Open Graph, Twitter Cards et JSON-LD bien structurés pour un partage clair et un meilleur référencement.
+            </p>
+          </div>
+          <div className="rounded-xl border p-5 bg-white">
+            <div className="text-2xl mb-2">🌱</div>
+            <h3 className="font-semibold">Design modulaire & éco-conçu</h3>
+            <p className="text-sm text-neutral-600 mt-1">
+              Système de composants Tailwind réutilisables, visuels sobres et coûts carbone limités.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* APPROCHE TECHNIQUE */}
+      <section className="mb-12 md:mb-16">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Approche technique</h2>
+        <ul className="grid md:grid-cols-2 gap-4 list-none pl-0">
+          <li className="rounded-lg border p-4">
+            <strong>Next.js App Router</strong> : architecture modulaire et SSR/ISR pour des chargements rapides.
+          </li>
+          <li className="rounded-lg border p-4">
+            <strong>Tailwind CSS</strong> : design systémique, lisible et facile à maintenir.
+          </li>
+          <li className="rounded-lg border p-4">
+            <strong>Optimisation médias</strong> : JPG, lazy loading et <code>sizes</code> précis via <code>next/image</code>.
+          </li>
+          <li className="rounded-lg border p-4">
+            <strong>Méta-données</strong> : Open Graph, Twitter Cards & JSON-LD pour un SEO sémantique propre.
+          </li>
+        </ul>
+      </section>
+
+      {/* GALERIE */}
+      <section className="mb-12 md:mb-16">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Galerie</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <figure className="relative aspect-video rounded-xl overflow-hidden border">
+            <Image
+              src="/images/studio-site/work-1.jpg"
+              alt="Aperçu – page d'accueil du site Studio Créatif"
+              fill
+              className="object-cover transition-transform duration-700 hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+              loading="lazy"
+            />
+          </figure>
+          <figure className="relative aspect-video rounded-xl overflow-hidden border">
+            <Image
+              src="/images/studio-site/work-2.jpg"
+              alt="Aperçu – page portfolio du site Studio Créatif"
+              fill
+              className="object-cover transition-transform duration-700 hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
+      {/* RÉSULTATS + CTA */}
+      <section className="text-center">
+        <div className="mb-8 inline-grid grid-cols-3 gap-4 text-left">
+          <div className="rounded-lg border p-4">
+            <div className="text-3xl font-semibold">95+</div>
+            <div className="text-sm text-neutral-600">Performance</div>
+          </div>
+          <div className="rounded-lg border p-4">
+            <div className="text-3xl font-semibold">100</div>
+            <div className="text-sm text-neutral-600">Accessibilité</div>
+          </div>
+          <div className="rounded-lg border p-4">
+            <div className="text-3xl font-semibold">100</div>
+            <div className="text-sm text-neutral-600">SEO</div>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-semibold mb-4">
+          Envie d’un site rapide et élégant ?
+        </h2>
+        <Link
+          href="/projets/studio-creatif/contact"
+          className="inline-block bg-black text-white px-6 py-3 rounded-md hover:bg-neutral-800 transition"
+        >
+          Discutons de votre projet
+        </Link>
+      </section>
+
+      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CreativeWork",
-            headline: "Studio Créatif – étude de cas",
-            about:
-              "Vitrine Next.js (App Router), Tailwind CSS, images JPG, SEO (Open Graph + JSON-LD).",
+            name: "Studio Créatif – design & développement",
+            description:
+              "Site vitrine performant et éco-conçu, réalisé avec Next.js, Tailwind, et SEO avancé (Open Graph + JSON-LD).",
             image: [
-              "/images/studio-site/hero-v2.jpg",
-              "/images/studio-site/v1-preview.jpg",
-              "/images/studio-site/v2-preview.jpg",
+              "/opengraph-image.jpg",
+              "/images/studio-site/hero.jpg",
+              "/images/studio-site/work-1.jpg",
+              "/images/studio-site/work-2.jpg",
             ],
             author: {
               "@type": "Person",
@@ -169,7 +197,7 @@ export default function Page() {
             },
             publisher: {
               "@type": "Organization",
-              name: "Verriele Simon",
+              name: "Studio Créatif",
               logo: "/logo.svg",
             },
             inLanguage: "fr-FR",

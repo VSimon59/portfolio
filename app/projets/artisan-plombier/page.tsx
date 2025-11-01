@@ -1,3 +1,5 @@
+
+
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -5,6 +7,7 @@ export const metadata: Metadata = {
   title: "Artisan Plombier | Portfolio",
   description: "Présentation claire et rassurante pour un artisan plombier local.",
 };
+
 
 export default function ArtisanPlombierPage() {
   return (
@@ -34,3 +37,4 @@ export default function ArtisanPlombierPage() {
     </main>
   );
 }
+

@@ -8,13 +8,55 @@
 .btn-primary { background:#111; color:#fff; }
 .btn-primary:focus-visible { outline:none; box-shadow:0 0 0 3px rgba(59,130,246,.5); }
 
-@keyframes fadeIn {
+/* Fade-in au mount (le .opacity-0 est retiré au mount via JS) */
+@keyframes pageFadeIn {
   from {
     opacity: 0;
-    transform: translateY(15px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
+}
+
+@keyframes pageFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.page-fading-in {
+  animation: pageFadeIn 0.3s ease forwards;
+}
+
+.page-fading-out {
+  animation: pageFadeOut 0.2s ease forwards;
+}
+/* NProgress (barre de chargement en haut) */
+#nprogress {
+  pointer-events: none;
+}
+#nprogress .bar {
+  background: #111;        /* couleur de la barre */
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;             /* épaisseur */
+}
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #111, 0 0 5px #111;
+  opacity: 1.0;
+  transform: rotate(3deg) translate(0px, -4px);
+}
+#nprogress .spinner {
+  display: none;           /* pas de spinner circulaire */
 }
