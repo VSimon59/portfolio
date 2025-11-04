@@ -1,10 +1,12 @@
-// next.config.ts
-import type { NextConfig } from 'next';
+// Projets/portfolio/next.config.ts
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ['image/avif', 'image/webp'],
-    
+    // soit cette forme (simple) :
+    domains: ["images.unsplash.com"],
+    // ou, équivalent/plus précis :
+    // remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
   },
 };
 
