@@ -62,9 +62,13 @@ export default function StudioCreatifPage() {
             <Link href="/projets/studio-creatif/projets" className="bg-black/80 text-white px-5 py-2.5 rounded-md hover:bg-black transition border border-white/20">
               Projets
             </Link>
-            <Link href="/projets/studio-creatif/a-propos" className="bg-white/10 text-white px-5 py-2.5 rounded-md hover:bg-white/20 transition border border-white/20">
-              À propos
+            <Link
+                  href="/projets/studio-creatif/a-propos"
+                  className="px-5 py-2.5 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-sm"
+            >
+                  À propos
             </Link>
+
             <Link href="/projets/studio-creatif/contact" className="bg-blue-600 text-white px-5 py-2.5 rounded-md hover:bg-blue-700 transition">
               Contact
             </Link>
