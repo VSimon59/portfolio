@@ -1,213 +1,154 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
-// --- MÉTADONNÉES SEO --- //
 export const metadata: Metadata = {
-  title: "Studio Créatif – design & développement",
+  title: "Studio Créatif — Aperçu",
   description:
-    "Un site vitrine Next.js & Tailwind performant et éco-conçu. Optimisation des médias JPG, lazy loading, SEO Open Graph et JSON-LD.",
-  alternates: { canonical: "/projets/studio-creatif" },
-  openGraph: {
-    type: "website",
-    title: "Studio Créatif – design & développement",
-    description:
-      "Un site vitrine Next.js & Tailwind performant et éco-conçu. Optimisation des médias JPG, lazy loading, SEO Open Graph et JSON-LD.",
-    url: "https://vsimon59.vercel.app/projets/studio-creatif",
-    siteName: "Studio Créatif",
-    images: [
-      {
-        url: "/opengraph-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Aperçu du site Studio Créatif",
-      },
-    ],
-    locale: "fr_FR",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Studio Créatif – design & développement",
-    description:
-      "Site vitrine moderne réalisé avec Next.js, Tailwind, SEO et optimisation des médias.",
-    images: ["/opengraph-image.jpg"],
-  },
+    "Un site clair, rapide et crédible : design net, UX agréable, performances et SEO.",
 };
 
-// --- PAGE PRINCIPALE --- //
-export default function StudioCreatifPage() {
+export default function StudioCreatifHomePage() {
   return (
-    <article className="max-w-6xl mx-auto py-12 md:py-16 px-4">
-      {/* HERO */}
-      <section className="relative aspect-[16/9] w-full mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-lg">
-        <Image
-          src="/images/studio-site/hero.jpg"
-          alt="Aperçu — Studio Créatif moderne"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-60"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        <div className="absolute inset-0 flex flex-col justify-end items-start p-6 md:p-10 text-white">
-          <h1 className="text-4xl md:text-5xl font-bold">Studio Créatif</h1>
-          <p className="mt-3 text-base md:text-lg max-w-2xl text-white/90">
-            Design & développement web — performance réelle, esthétique soignée et SEO sémantique.
+    <section className="w-full bg-neutral-950 text-neutral-100 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero centré */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
+            Un site clair, rapide <span className="text-indigo-300">et crédible</span>.
+          </h1>
+          <p className="mt-6 text-neutral-300 max-w-2xl mx-auto">
+            Positionnement, UX et développement moderne. Nous concevons des interfaces
+            fiables qui inspirent confiance et transforment l’attention en action.
           </p>
-          {/* Boutons d’accès rapide aux pages */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/projets/studio-creatif/services" className="bg-white text-black px-5 py-2.5 rounded-md hover:bg-neutral-200 transition">
-              Services
-            </Link>
-            <Link href="/projets/studio-creatif/projets" className="bg-black/80 text-white px-5 py-2.5 rounded-md hover:bg-black transition border border-white/20">
-              Projets
-            </Link>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-                  href="/projets/studio-creatif/a-propos"
-                  className="px-5 py-2.5 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-sm"
+              href="/projets/studio-creatif/contact"
+              className="rounded-full bg-indigo-500/90 hover:bg-indigo-400 text-neutral-950 px-6 py-3 font-medium shadow-lg shadow-indigo-900/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
             >
-                  À propos
+              Démarrer mon projet
             </Link>
-
-            <Link href="/projets/studio-creatif/contact" className="bg-blue-600 text-white px-5 py-2.5 rounded-md hover:bg-blue-700 transition">
-              Contact
-            </Link>
+            <a
+              href="#offre"
+              className="rounded-full border border-neutral-800 hover:bg-neutral-900/60 px-6 py-3"
+            >
+              Voir l’offre
+            </a>
           </div>
         </div>
-      </section>
 
-      {/* OBJECTIFS (agencement cartes) */}
-      <section className="mb-12 md:mb-16">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Objectifs</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="rounded-xl border p-5 bg-white">
-            <div className="text-2xl mb-2">⚡</div>
-            <h3 className="font-semibold">Vitesse & Core Web Vitals</h3>
-            <p className="text-sm text-neutral-600 mt-1">
-              Rendu rapide (App Router), lazy loading, tailles d’images adaptées pour une sensation de fluidité.
+        {/* Offres */}
+        <section id="offre" className="py-10">
+          <header className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Nos offres</h2>
+            <p className="mt-3 text-neutral-300 max-w-2xl mx-auto">
+              Des solutions claires, orientées résultats. Design net, UX rassurante, mise en ligne maîtrisée.
             </p>
-          </div>
-          <div className="rounded-xl border p-5 bg-white">
-            <div className="text-2xl mb-2">🔍</div>
-            <h3 className="font-semibold">SEO propre</h3>
-            <p className="text-sm text-neutral-600 mt-1">
-              Open Graph, Twitter Cards et JSON-LD bien structurés pour un partage clair et un meilleur référencement.
-            </p>
-          </div>
-          <div className="rounded-xl border p-5 bg-white">
-            <div className="text-2xl mb-2">🌱</div>
-            <h3 className="font-semibold">Design modulaire & éco-conçu</h3>
-            <p className="text-sm text-neutral-600 mt-1">
-              Système de composants Tailwind réutilisables, visuels sobres et coûts carbone limités.
-            </p>
-          </div>
-        </div>
-      </section>
+          </header>
 
-      {/* APPROCHE TECHNIQUE */}
-      <section className="mb-12 md:mb-16">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Approche technique</h2>
-        <ul className="grid md:grid-cols-2 gap-4 list-none pl-0">
-          <li className="rounded-lg border p-4">
-            <strong>Next.js App Router</strong> : architecture modulaire et SSR/ISR pour des chargements rapides.
-          </li>
-          <li className="rounded-lg border p-4">
-            <strong>Tailwind CSS</strong> : design systémique, lisible et facile à maintenir.
-          </li>
-          <li className="rounded-lg border p-4">
-            <strong>Optimisation médias</strong> : JPG, lazy loading et <code>sizes</code> précis via <code>next/image</code>.
-          </li>
-          <li className="rounded-lg border p-4">
-            <strong>Méta-données</strong> : Open Graph, Twitter Cards & JSON-LD pour un SEO sémantique propre.
-          </li>
-        </ul>
-      </section>
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Site vitrine */}
+            <li className="rounded-2xl border border-indigo-500/40 bg-neutral-900/60 p-6 shadow-lg shadow-indigo-900/20 flex flex-col">
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold">Site vitrine</h3>
+                <p className="mt-2 text-neutral-300">
+                  Présenter clairement votre activité avec une image professionnelle.
+                </p>
+                <div className="mt-4 text-indigo-300 font-medium">À partir de ... €</div>
+                <ul className="mt-5 space-y-2 text-sm text-neutral-300">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400/80 inline-block" />
+                    <span>Arborescence & wireframes</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400/80 inline-block" />
+                    <span>Design UI propre & accessible</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400/80 inline-block" />
+                    <span>Intégration Next.js (SEO + perf)</span>
+                  </li>
+                </ul>
+              </div>
+              <Link
+                href="/projets/studio-creatif/contact"
+                className="mt-6 inline-flex items-center justify-center rounded-full bg-indigo-500/90 hover:bg-indigo-400 text-neutral-950 px-5 py-2 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+              >
+                Demander un devis
+              </Link>
+            </li>
 
-      {/* GALERIE */}
-      <section className="mb-12 md:mb-16">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6">Galerie</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <figure className="relative aspect-video rounded-xl overflow-hidden border">
-            <Image
-              src="/images/studio-site/work-1.jpg"
-              alt="Aperçu – page d'accueil du site Studio Créatif"
-              fill
-              className="object-cover transition-transform duration-700 hover:scale-105"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-              loading="lazy"
-            />
-          </figure>
-          <figure className="relative aspect-video rounded-xl overflow-hidden border">
-            <Image
-              src="/images/studio-site/work-2.jpg"
-              alt="Aperçu – page portfolio du site Studio Créatif"
-              fill
-              className="object-cover transition-transform duration-700 hover:scale-105"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-              loading="lazy"
-            />
-          </figure>
-        </div>
-      </section>
+            {/* E-commerce */}
+            <li className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 flex flex-col">
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold">E-commerce</h3>
+                <p className="mt-2 text-neutral-300">Vendre en ligne avec un parcours simple et rassurant.</p>
+                <div className="mt-4 text-indigo-300 font-medium">Sur devis</div>
+                <ul className="mt-5 space-y-2 text-sm text-neutral-300">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400/80 inline-block" />
+                    <span>Catalogue & fiches produits</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400/80 inline-block" />
+                    <span>Paiement & confirmation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400/80 inline-block" />
+                    <span>Bonnes pratiques de conversion</span>
+                  </li>
+                </ul>
+              </div>
+              <Link
+                href="/projets/studio-creatif/contact"
+                className="mt-6 inline-flex items-center justify-center rounded-full border border-neutral-800 hover:bg-neutral-900/60 px-5 py-2 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-700"
+              >
+                Demander un devis
+              </Link>
+            </li>
 
-      {/* RÉSULTATS + CTA */}
-      <section className="text-center">
-        <div className="mb-8 inline-grid grid-cols-3 gap-4 text-left">
-          <div className="rounded-lg border p-4">
-            <div className="text-3xl font-semibold">95+</div>
-            <div className="text-sm text-neutral-600">Performance</div>
+            {/* Refonte */}
+            <li className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 flex flex-col">
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold">Refonte</h3>
+                <p className="mt-2 text-neutral-300">Moderniser design, UX, performances et référencement.</p>
+                <div className="mt-4 text-indigo-300 font-medium">Sur devis</div>
+                <ul className="mt-5 space-y-2 text-sm text-neutral-300">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400/80 inline-block" />
+                    <span>Audit UX/SEO & priorités</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400/80 inline-block" />
+                    <span>Refonte UI + contenu</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-indigo-400/80 inline-block" />
+                    <span>Migration & redirections</span>
+                  </li>
+                </ul>
+              </div>
+              <Link
+                href="/projets/studio-creatif/contact"
+                className="mt-6 inline-flex items-center justify-center rounded-full border border-neutral-800 hover:bg-neutral-900/60 px-5 py-2 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-700"
+              >
+                Demander un devis
+              </Link>
+            </li>
+          </ul>
+
+          {/* CTA sticky mobile */}
+          <div className="md:hidden fixed bottom-4 left-0 right-0 px-4 z-30">
+            <div className="mx-auto max-w-md rounded-full border border-neutral-800 bg-neutral-900/80 backdrop-blur p-2 shadow-xl">
+              <Link
+                href="/projets/studio-creatif/contact"
+                className="block w-full text-center rounded-full bg-indigo-500/90 hover:bg-indigo-400 text-neutral-950 px-6 py-3 font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+              >
+                Demander un devis
+              </Link>
+            </div>
           </div>
-          <div className="rounded-lg border p-4">
-            <div className="text-3xl font-semibold">100</div>
-            <div className="text-sm text-neutral-600">Accessibilité</div>
-          </div>
-          <div className="rounded-lg border p-4">
-            <div className="text-3xl font-semibold">100</div>
-            <div className="text-sm text-neutral-600">SEO</div>
-          </div>
-        </div>
-
-        <h2 className="text-2xl font-semibold mb-4">
-          Envie d’un site rapide et élégant ?
-        </h2>
-        <Link
-          href="/projets/studio-creatif/contact"
-          className="inline-block bg-black text-white px-6 py-3 rounded-md hover:bg-neutral-800 transition"
-        >
-          Discutons de votre projet
-        </Link>
-      </section>
-
-      {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CreativeWork",
-            name: "Studio Créatif – design & développement",
-            description:
-              "Site vitrine performant et éco-conçu, réalisé avec Next.js, Tailwind, et SEO avancé (Open Graph + JSON-LD).",
-            image: [
-              "/opengraph-image.jpg",
-              "/images/studio-site/hero.jpg",
-              "/images/studio-site/work-1.jpg",
-              "/images/studio-site/work-2.jpg",
-            ],
-            author: {
-              "@type": "Person",
-              name: "Verriele Simon",
-              url: "https://vsimon59.vercel.app",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "Studio Créatif",
-              logo: "/logo.svg",
-            },
-            inLanguage: "fr-FR",
-          }),
-        }}
-      />
-    </article>
+        </section>
+      </div>
+    </section>
   );
 }
