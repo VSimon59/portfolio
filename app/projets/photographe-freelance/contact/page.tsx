@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import ContactForm from "./ContactForm.client";
+import ContactForm from "../../../components/ContactForm.client";
+
 
 export const metadata: Metadata = {
   title: "Contact – Studio Créatif",
