@@ -60,3 +60,7 @@
 #nprogress .spinner {
   display: none;           /* pas de spinner circulaire */
 }
+
+/* Cache proprement la scrollbar sur les conteneurs horizontaux */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

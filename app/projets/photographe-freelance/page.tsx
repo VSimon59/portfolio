@@ -2,8 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Gallery from "./components/Gallery";
 import Services from "./components/Services";
-import Results from "./components/Results";
-import CTA from "./components/CTA";
+
 
 export default function ProjectPhotographeFreelancePage() {
   return (
@@ -12,8 +11,7 @@ export default function ProjectPhotographeFreelancePage() {
       <Hero />
       <Gallery />
       <Services />
-      <Results />
-      <CTA />
+      
     </main>
   );
 }

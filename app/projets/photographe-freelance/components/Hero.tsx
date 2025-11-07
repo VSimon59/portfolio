@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Contenu centré */}
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-36 text-center">
         <h1 className="text-5xl md:text-6xl font-semibold leading-tight text-neutral-100 drop-shadow-md">
-          Site vitrine <span className="text-amber-400">Photographe freelance</span>
+           <span className="text-amber-400">Photographe freelance</span>
         </h1>
 
         <p className="mt-6 text-neutral-200 text-lg max-w-2xl mx-auto">
@@ -34,12 +34,7 @@ export default function Hero() {
           >
             Voir la galerie
           </a>
-          <a
-            href="#resultats"
-            className="inline-flex items-center rounded-full border border-amber-400/70 text-amber-300 hover:bg-amber-400/10 px-6 py-3 font-medium transition"
-          >
-            Résultats
-          </a>
+        
         </div>
       </div>
     </section>

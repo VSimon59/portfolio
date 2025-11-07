@@ -19,7 +19,8 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-    "@/*": ["app/*"]
+    "@/*": ["*"],
+    "@artisan-plombier/*": ["app/projets/artisan-plombier/components/*"]
     },
     "plugins": [
       {
