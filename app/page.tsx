@@ -12,7 +12,7 @@ export default function Home() {
         </h1>
         <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
           Développeur web et designer passionné. <br />
-          Création de sites performants, esthétiques et éco-conçus.
+          Je présente différents projets fictifs.
         </p>
       </section>
 

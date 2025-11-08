@@ -35,7 +35,9 @@ export default function StudioCreatifLayout({
             <Link href="/projets/studio-creatif/points-forts" className="text-neutral-300 hover:text-white">
               Points forts
             </Link>
-
+            <Link href="/projets/studio-creatif/offres" className="inline-block border-b-2 border-transparent py-4 hover:border-gray-300">
+              Offres
+            </Link>
           </nav>
         </div>
       </header>

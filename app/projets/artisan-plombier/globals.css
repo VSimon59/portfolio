@@ -1,0 +1,65 @@
+/* === Thème pro plomberie === */
+:root{
+  --brand-900:#0f2a5a; /* bleu profond */
+  --brand-800:#163973;
+  --brand-700:#1b478e;
+  --brand-600:#2254a3;
+  --brand-100:#e8f0ff;
+
+  --ink-900:#0b0b0c;
+  --ink-700:#3b3b3f;
+  --ink-500:#6b7280;
+
+  --line:#e5e7eb;
+  --card:#ffffff;
+  --bg:#fafafa;
+}
+
+html,body{ height:100%; }
+body{
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(34,84,163,.03), transparent 60%),
+    radial-gradient(900px 500px at 0% 10%, rgba(34,84,163,.025), transparent 60%),
+    var(--bg);
+  color:var(--ink-900);
+}
+
+/* Conteneur de page */
+.container-pro{
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Cartes & boutons */
+.card{
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:1rem;             /* ~ rounded-2xl */
+  box-shadow:0 1px 1px rgba(0,0,0,.03), 0 16px 40px -24px rgba(15,42,90,.18);
+}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  height:2.5rem; padding:0 .9rem; border-radius:.75rem;
+  font-weight:600; font-size:.875rem; line-height:1;
+  transition:background .2s, box-shadow .2s, border-color .2s, color .2s, transform .08s;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{ background:var(--brand-900); color:#fff; }
+.btn-primary:hover{ background:var(--brand-800); }
+
+.btn-ghost{ border:1px solid var(--line); color:var(--ink-900); background:#fff; }
+.btn-ghost:hover{ background:#f7f7f7; }
+
+/* Badges sobres */
+.badge{
+  display:inline-flex; align-items:center; gap:.4rem;
+  height:1.75rem; padding:0 .6rem; border-radius:999px;
+  border:1px solid var(--line); background:#fff; color:var(--ink-700);
+  font-size:.75rem; font-weight:500;
+}
+
+/* Titres */
+h1,h2,h3{ letter-spacing:-0.015em; }
