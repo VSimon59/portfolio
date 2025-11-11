@@ -1,82 +1,126 @@
-// app/projets/studio-creatif/page.tsx
-import type { Metadata } from "next";
 import Link from "next/link";
+import ApercuStudioCreatif from "./Apercu";
 
+const ACCENT = "rgb(165 180 252)";
 
-export const metadata: Metadata = {
-  title: "Studio Créatif — Aperçu",
-  description: "Un site clair, rapide et crédible : design net, UX rassurante, performances et SEO.",
+export const metadata = {
+  title: "Studio Créatif — Design, UI/UX & Développement Web",
+  description:
+    "Studio créatif indépendant : design d’interfaces, identité visuelle et développement web moderne. Basé à Calais.",
 };
 
-export default function StudioCreatifHomePage() {
+export default function PageStudioCreatif() {
   return (
-    <section className="w-full bg-neutral-950 text-neutral-100 py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero centré */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
-            Un site clair, rapide <span className="text-indigo-300">et crédible</span>.
-          </h1>
-          <p className="mt-6 text-neutral-300 max-w-2xl mx-auto">
-            Positionnement, UX et développement moderne. Nous concevons des interfaces
-            fiables qui inspirent confiance et transforment l’attention en action.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/projets/studio-creatif/contact"
-              className="rounded-full bg-indigo-500/90 hover:bg-indigo-400 text-neutral-950 px-6 py-3 font-medium shadow-lg shadow-indigo-900/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
-            >
-              Démarrer mon projet
-            </Link>
-            <a
-              href="/projets/studio-creatif/offres"
-              className="rounded-full border border-neutral-800 hover:bg-neutral-900/60 px-6 py-3"
-            >
-              Voir l’offre
-            </a>
-          </div>
-        </div>
+    <main className="relative min-h-screen overflow-hidden">
+      {/* --- Fond global --- */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]" />
+      <div className="absolute inset-0 opacity-[0.06] bg-[url('/textures/pixel-grid.png')] bg-repeat" />
 
-        {/* Séparateur fluide */}
-        <div className="h-32 bg-gradient-to-b from-transparent via-neutral-950/60 to-neutral-950" />
-     
-        {/* Aperçu des offres (teaser) */}
-        <section className="py-20 bg-neutral-950 text-neutral-100">
-          <div className="max-w-6xl mx-auto text-center px-4">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Des solutions claires et sur mesure</h2>
-            <p className="text-neutral-400 max-w-2xl mx-auto">
-              E-commerce, refonte : nous créons des interfaces efficaces et élégantes.
+      {/* --- Contenu principal --- */}
+      <div className="relative z-10 flex flex-col">
+        <ApercuStudioCreatif />
+
+        {/* --- Section de présentation --- */}
+        <section className="mx-auto max-w-5xl px-6 py-20 text-gray-200 animate-page">
+          <div className="text-center space-y-4 mb-16">
+            <h2
+              className="text-2xl md:text-3xl font-semibold"
+              style={{ color: ACCENT }}
+            >
+              Une approche centrée sur la clarté et la cohérence
+            </h2>
+            <p className="max-w-3xl mx-auto text-gray-300 leading-relaxed">
+              Le studio met l’accent sur la simplicité, la lisibilité et la
+              fluidité des expériences digitales. Chaque projet est conçu comme un
+              parcours clair, intuitif et esthétique — pensé pour servir autant la
+              marque que l’utilisateur.
             </p>
+          </div>
 
-            <div className="mt-10 flex flex-wrap justify-center gap-6">
-              {[
-              
-                { t: "E-commerce", d: "Vendez en ligne avec une expérience fluide et rassurante." },
-                { t: "Refonte", d: "Modernisez votre site sans perdre votre identité." },
-              ].map((c) => (
+          {/* --- Aperçus des projets --- */}
+          <div className="grid gap-10 md:grid-cols-3">
+            {/* --- Système & logo --- */}
+            <Link
+              href="/projets/studio-creatif/systeme-logo"
+              className="block rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_1px_1px_rgba(0,0,0,.15),0_16px_40px_-24px_rgba(0,0,0,.45)] card-link overflow-hidden"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src="/images/studio-site/brand-system.png"
+                  alt="Système & logo"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
                 <div
-                  key={c.t}
-                  className="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-6 w-72 transition-transform hover:-translate-y-1 hover:bg-neutral-900/80 duration-300"
-                >
-                  <h3 className="text-lg font-semibold text-indigo-400 mb-2">{c.t}</h3>
-                  <p className="text-sm text-neutral-400">{c.d}</p>
-                </div>
-              ))}
-            </div>
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5"
+                  style={{ background: ACCENT, opacity: 0.6 }}
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-gray-100">
+                  Système & logo
+                </h3>
+                <p className="mt-1 text-sm text-gray-300 leading-relaxed">
+                  Logotype principal, variantes, grilles et principes d’alignement.
+                </p>
+              </div>
+            </Link>
 
-            <div className="mt-10">
-              <a
-                href="/projets/studio-creatif/offres"
-                className="rounded-full bg-indigo-500/90 hover:bg-indigo-400 text-neutral-950 px-8 py-3 font-medium shadow-lg shadow-indigo-900/20 transition-colors duration-300"
-              >
-                Découvrir les offres
-              </a>
-            </div>
+            {/* --- Palette & typographies --- */}
+            <Link
+              href="/projets/studio-creatif/palette-typographies"
+              className="block rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_1px_1px_rgba(0,0,0,.15),0_16px_40px_-24px_rgba(0,0,0,.45)] card-link overflow-hidden"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src="/images/studio-site/ui-prototype.png"
+                  alt="Palette & typographies"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5"
+                  style={{ background: ACCENT, opacity: 0.6 }}
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-gray-100">
+                  Palette & typographies
+                </h3>
+                <p className="mt-1 text-sm text-gray-300 leading-relaxed">
+                  Couleurs et familles de caractères qui définissent l’identité
+                  visuelle du studio.
+                </p>
+              </div>
+            </Link>
+
+            {/* --- Guidelines & usages --- */}
+            <Link
+              href="/projets/studio-creatif/guidelines-usages"
+              className="block rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_1px_1px_rgba(0,0,0,.15),0_16px_40px_-24px_rgba(0,0,0,.45)] card-link overflow-hidden"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src="/images/studio-site/web-next.png"
+                  alt="Guidelines & usages"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5"
+                  style={{ background: ACCENT, opacity: 0.6 }}
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-gray-100">
+                  Guidelines & usages
+                </h3>
+                <p className="mt-1 text-sm text-gray-300 leading-relaxed">
+                  Mini charte graphique et exemples d’application sur le web et
+                  les réseaux sociaux.
+                </p>
+              </div>
+            </Link>
           </div>
         </section>
-
-      
       </div>
-    </section>
+    </main>
   );
 }
