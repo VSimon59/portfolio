@@ -6,12 +6,12 @@ export default function Hero() {
       {/* Image d’arrière-plan avec filtre chaud */}
       <div className="absolute inset-0">
         <Image
-          src="/images/photographe-freelance.jpg"
+          src="/images/photographe-freelance.png"
           alt="Photographe freelance - site vitrine"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-60"
+          className="object-cover object-[center_-1%] opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
       </div>

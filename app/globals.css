@@ -26,6 +26,21 @@
     opacity: 0;
   }
 }
+.bg-metal-dark {
+  background: radial-gradient(circle at top left, #3f4c6b 0%, #2b2b2b 45%, #0f0f0f 100%);
+  background-attachment: fixed;
+}
+
+.bg-metal-dark {
+  background: radial-gradient(
+      circle at top left,
+      #3f4c6b 0%,
+      #2b2b2b 40%,
+      #111111 100%
+    );
+  background-attachment: fixed;
+}
+
 
 .page-fading-in {
   animation: pageFadeIn 0.3s ease forwards;
@@ -81,3 +96,10 @@
   transition: transform .2s ease, background-color .2s ease, opacity .2s ease;
 }
 .card-link:hover { transform: translateY(-2px); }
+
+.text-engraved {
+  color: #d1d2d4;
+  text-shadow: 
+    0px 1px 1px rgba(0, 0, 0, 0.65),
+    0px -1px 1px rgba(255, 255, 255, 0.08);
+}

@@ -18,7 +18,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <a href="tel:+33XXXXXXXXX" className="btn btn-primary">Appeler</a>
+          <a href="tel:+33766292258" className="btn btn-primary">Appeler</a>
         </div>
       </div>
     </header>

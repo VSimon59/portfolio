@@ -10,7 +10,7 @@ export default function PhotographeFreelanceLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Photographe Freelance VSIMON",
-    "image": "https://vsimon59.vercel.app/images/photographe-freelance.jpg",
+    "image": "https://vsimon59.vercel.app/images/photographe-freelance.png",
     "url": "https://vsimon59.vercel.app/projets/photographe-freelance",
     "address": {
       "@type": "PostalAddress",
@@ -33,7 +33,7 @@ export default function PhotographeFreelanceLayout({
       />
 
       {/* Contenu principal du projet */}
-      <div className="pb-16">{children}</div>
+      <div className="min-h-screen bg-slate-50 text-slate-900">{children}</div>
     </div>
   );
 }

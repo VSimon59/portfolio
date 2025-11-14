@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Section from "@artisan-plombier/Section";
+import Section from "./components/Section";
 
 export const metadata = {
   title: "Artisan Plombier à Calais — Dépannage & entretien",
@@ -20,7 +20,7 @@ export default function HomePlombier() {
           </p>
 
           <div className="mt-5 flex flex-wrap gap-2">
-            <a href="tel:+33XXXXXXXXX" className="btn btn-primary">Appeler</a>
+            <a href="tel:+33766292258" className="btn btn-primary">Appeler</a>
             <Link href="/projets/artisan-plombier/contact" className="btn btn-ghost">Demander un devis</Link>
             <Link href="/projets/artisan-plombier/services" className="btn btn-ghost">Voir les services</Link>
           </div>

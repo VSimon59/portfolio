@@ -11,7 +11,7 @@ const images = [
   { src: "/images/studio-site/galerie-urbain.jpg", alt: "Rue pavée ancienne au coucher du soleil" },
   { src: "/images/studio-site/galerie-paysage.jpg", alt: "Prairie dorée au soleil couchant" },
   { src: "/images/studio-site/galerie-details.jpg", alt: "Appareil photo posé sur une table en lumière diffuse" },
-  { src: "/images/studio-site/photographe-freelance.jpg", alt: "Image hero du projet photographe" },
+  { src: "/images/studio-site/photographe-freelance.png", alt: "Image hero du projet photographe" },
 ];
 
 export default function GaleriePage() {
