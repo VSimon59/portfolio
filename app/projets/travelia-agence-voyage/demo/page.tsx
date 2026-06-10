@@ -84,13 +84,13 @@ const filteredDestinations = destinations.filter((item) =>
             </button>
 
             <nav className="hidden gap-10 text-lg font-medium lg:flex">
-              <a
-                href="#"
-                className="text-yellow-400 underline underline-offset-8"
-              >
-                Accueil
-              </a>
+              <a href="#">Accueil</a>
               <a href="#destinations">Destinations</a>
+
+              <Link href="/projets/travelia-agence-voyage/demo/favoris">
+                ❤️ Favoris
+              </Link>
+
               <a href="#">Offres</a>
               <a href="#">À propos</a>
               <a href="#">Contact</a>
@@ -124,7 +124,13 @@ const filteredDestinations = destinations.filter((item) =>
                 >
                   Destinations
                 </a>
-
+                
+                <Link
+                  href="/projets/travelia-agence-voyage/demo/favoris"
+                  className="rounded-2xl px-5 py-3 transition-all duration-300 hover:bg-yellow-400 hover:text-slate-950"
+                >
+                  ❤️ Favoris
+                </Link>
                 <a
                   className="rounded-2xl px-5 py-3 transition-all duration-300 hover:bg-yellow-400 hover:text-slate-950"
                   href="#"

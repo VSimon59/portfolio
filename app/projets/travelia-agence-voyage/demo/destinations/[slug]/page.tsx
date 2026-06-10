@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FavoriteButton from "@/app/components/FavoriteButton";
 
 const destinations = [
   {
@@ -177,9 +178,7 @@ export default async function DestinationPage({
             ✈️ Réserver maintenant
             </a>
 
-            <button className="rounded-2xl border border-white/30 bg-white/10 px-8 py-4 text-lg font-semibold backdrop-blur-md transition hover:bg-white/20">
-                ❤️ Ajouter aux favoris
-            </button>
+            <FavoriteButton slug={destination.slug} />
             </div>
         </div>
 
