@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
+import FavoritesCounter from "@/app/components/FavoritesCounter";
 
 import {
   Popover,
@@ -87,9 +89,7 @@ const filteredDestinations = destinations.filter((item) =>
               <a href="#">Accueil</a>
               <a href="#destinations">Destinations</a>
 
-              <Link href="/projets/travelia-agence-voyage/demo/favoris">
-                ❤️ Favoris
-              </Link>
+              <FavoritesCounter />
 
               <a href="#">Offres</a>
               <a href="#">À propos</a>
@@ -131,6 +131,7 @@ const filteredDestinations = destinations.filter((item) =>
                 >
                   ❤️ Favoris
                 </Link>
+
                 <a
                   className="rounded-2xl px-5 py-3 transition-all duration-300 hover:bg-yellow-400 hover:text-slate-950"
                   href="#"
