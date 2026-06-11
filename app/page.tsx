@@ -5,7 +5,7 @@ const projects = [
   {
     href: "/projets/travelia-agence-voyage",
     title: "site-de-voyage",
-    image: "/images/site-de-voyage.png",
+    image: "/images/Travelia.png",
     alt: "Visuel du projet site-de-voyage",
     
   },
